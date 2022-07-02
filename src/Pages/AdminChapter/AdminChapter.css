@@ -1,0 +1,50 @@
+.sub-chapters-list {
+    background: white;
+    width: 42vw;
+    height: 80vh;
+    position: absolute;
+    top: 15vh;
+    left: 5vw;
+    border-radius: 10px;
+}
+
+.sub-chapters-list .header {
+    width: calc(100% - 30px);
+    background: #83CA07;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 35px;
+    padding: 10px 15px;
+}
+
+.test-questions-list {
+    background: white;
+    width: 42vw;
+    height: 80vh;
+    position: absolute;
+    top: 15vh;
+    right: 5vw;
+    border-radius: 10px;
+}
+
+.test-questions-list .header {
+    width: calc(100% - 30px);
+    background: #FAD17F;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 35px;
+    padding: 10px 15px;
+}
+
+.subchapter .chapter-admin span.id {
+    width: 40px;
+}
+.subchapter .chapter-admin .rename-form {
+    width: 70%;
+}

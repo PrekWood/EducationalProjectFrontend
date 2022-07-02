@@ -1,0 +1,126 @@
+.doctor-container {
+    width: 70vw;
+    height: 100vh;
+    background: #ECEFFF;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+img#doctorImg {
+    max-height: 80vh;
+    z-index: 10;
+}
+
+.doctor-container::before {
+    content: "";
+    background: #ffffff9c;
+    width: 80vh;
+    height: 80vh;
+    position: absolute;
+    top: -10vh;
+    right: -10vh;
+    z-index: 9;
+    border-radius: 50%;
+}
+
+.doctor-container::after {
+    content: "";
+    background: #ffffff9c;
+    width: 40vh;
+    height: 40vh;
+    position: absolute;
+    bottom: 10vh;
+    left: 10vh;
+    z-index: 9;
+    border-radius: 50%;
+}
+
+img#logo {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    max-width: 15vw;
+}
+
+.Authentication .form {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30vw;
+    height: 100vh;
+    background: white;
+    z-index: 15;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Authentication .form h2 {
+    font-size: 60px;
+    text-align: center;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+.Authentication .form .inner-form {
+    width: 100%;
+    margin: 60px;
+}
+
+.form.hidden {
+    display: none;
+}
+
+.form-link {
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+.form-link:hover {
+    color: #FFDE07;
+}
+
+span.errors.hidden {
+    display: none;
+}
+
+span.errors {
+    background: #dddddd;
+    width: calc(100% - 30px);
+    display: block;
+    padding: 10px 15px;
+    border-radius: 40px;
+    margin-bottom: 10px;
+}
+
+.Authentication .language-select {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 120px;
+}
+
+.Authentication .select-filter {
+    z-index: 999999;
+    left: 0;
+}
+
+.Authentication .select-field.language-select.open .select-drop-down-list {
+    z-index: 1000000;
+    position: fixed;
+    left: 0;
+}
+
+
+.Authentication {
+    width: 100vw;
+    height: 100vh;
+    background-size: contain;
+    background-position: right;
+}

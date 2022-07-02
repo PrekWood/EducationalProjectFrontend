@@ -1,0 +1,113 @@
+.chapters-container{
+    height: 100vh;
+    width:100vw;
+    background-size: cover;
+}
+.chapter {
+    background: #00B0DC;
+    width: 6vh;
+    height: 6vh;
+    border: 1.5vh solid #28C6C7;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.27)
+}
+
+.chapter.parent {
+    background: #FAD17F;
+    border: 0.5vh solid #E1BA66;
+    width: 15vh;
+    height: 15vh;
+    margin: -4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10vh;
+    color: white;
+}
+
+.button-navigation {
+    position: fixed;
+    bottom: 5vh;
+    right: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-navigation svg {
+    height: 10vh;
+    width: auto;
+    cursor: pointer;
+}
+
+.button-navigation svg:first-child {
+    margin-right: 50px;
+}
+
+.chapter{
+    cursor: pointer;
+}
+.chapter.parent.current:hover {
+    box-shadow: 0 0 50px white;
+
+}
+
+.chapter.parent span {
+    font-size: 10vh;
+    line-height: 10vh;
+}
+#logout_button svg{
+    height: 30px;
+    width: auto;
+    margin-left: -8px;
+}
+#logout_button{
+    position: fixed;
+    top: 2vh;
+    left:2vh;
+    background: white;
+    width: 7vh;
+    height: 7vh;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .7;
+}
+#logout_button:hover{
+    opacity: 1;
+}
+.chapter.test {
+    background: yellow;
+    border: 1.5vh solid #ffff92;
+}
+.chapter.current::after {
+    position: absolute;
+    top: -60px;
+    left: calc(50% - 30px);
+    border-top: 30px solid #00B0DC;
+    border-bottom: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-left: 30px solid transparent;
+    content: '';
+    animation: upAndDown 1s infinite;
+}
+@keyframes upAndDown {
+    0%{
+        top:-50px;
+    }
+    50%{
+        top:-60px;
+    }
+    100%{
+        top:-50px;
+    }
+}
+
+button#play_next_chapter {
+    position: fixed;
+    bottom: 5vh;
+    width: 20vw;
+    left: 40vw;
+}

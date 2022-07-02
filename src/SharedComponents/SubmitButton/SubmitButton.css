@@ -1,0 +1,20 @@
+button.submit-button {
+    width: 100%;
+    font-size: 35px;
+    padding: 11px 20px;
+    border: unset;
+    background: #FFDE07;
+    border-radius: 45px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px #0000003b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.submit-button svg {
+    height: 28px;
+    margin-left: 20px
+}

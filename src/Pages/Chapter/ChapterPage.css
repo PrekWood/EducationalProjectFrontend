@@ -1,0 +1,43 @@
+.Chapter{
+    background: #FAD17F;
+    height: 100vh;
+    padding:5vh 5vw;
+}
+.Chapter .container{
+    background: white;
+    height: 90vh;
+    border-radius: 5vh;
+}
+.Chapter .container .header{
+    display: flex;
+    align-items: center;
+    padding: 3vh ;
+}
+.Chapter .container .header svg{
+    height: 40px;
+    width: auto;
+    margin-right: 20px;
+}
+.Chapter .container .header h1{
+    margin:0;
+    font-size: 5vh;
+    font-weight: normal;
+}
+.Chapter .container .desc{
+    font-weight:  normal;
+    font-size:3vh;
+    margin: 40px;
+    padding: 20px;
+    background: #eaeaea;
+    border-radius: 30px;
+    width: 40vw;
+    max-height: calc(80vh - 135px);
+    overflow: auto;
+    display: block;
+}
+#next_step_button{
+    position: fixed;
+    bottom: 8vh;
+    width: 20vw;
+    right: 15vh;
+}

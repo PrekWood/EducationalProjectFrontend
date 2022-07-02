@@ -1,0 +1,18 @@
+.Chapter .examples .headline{
+    display: block;
+    margin-bottom: 25px;
+    font-family: Consolas;
+    font-size: 35px;
+}
+.Chapter .examples{
+    position: absolute;
+    top:calc(5vh + 50px);
+    right:calc(5vw + 50px);
+    background: #2a2a2a;
+    width: calc(40vw - 40px);
+    color: white;
+    font-family: Consolas;
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 20px;
+}

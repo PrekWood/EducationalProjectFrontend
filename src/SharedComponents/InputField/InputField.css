@@ -1,0 +1,84 @@
+.form-field {
+    margin-bottom: 30px;
+    position: relative
+}
+
+.form-field input {
+    width: calc(100% - 40px);
+    font-size: 26px;
+    padding: 15px 17px;
+    border: 2px solid #e0e0e0;
+    border-radius: 40px;
+}
+
+.form-field input::placeholder {
+    color: white
+}
+
+.form-field input:focus {
+    outline: unset;
+}
+
+.form-field label {
+    position: absolute;
+    font-size: 26px;
+    color: #CBCBCB;
+    z-index: 2;
+    top: 18px;
+    left: 17px;
+    background: white;
+    letter-spacing: 0;
+    cursor: auto;
+    transition: left 0.5s ease,
+        top .5s ease,
+        font-size .5s ease,
+        padding .5s ease,
+}
+
+.form-field input:focus+label,
+.form-field input:not(:placeholder-shown)+label {
+    padding: 0 10px;
+    top: -12px;
+    left: 10px;
+    font-size: 22px;
+}
+
+.form-field.half {
+    display: inline-block;
+    width: calc(50% - 10px);
+}
+
+.form-field.half:nth-child(2n+1) {
+    margin-right: 20px;
+}
+
+.form-field.invalid label {
+    color: #ff9191;
+}
+
+.form-field.invalid input {
+    border: 2px solid #ff9191;
+}
+
+
+.form-field.valid label {
+    color: limegreen;
+}
+
+.form-field.valid input {
+    border: 2px solid limegreen;
+}
+
+button.show-password {
+    position: absolute;
+    top: 25px;
+    background: transparent;
+    border: unset;
+    right: 10px;
+    cursor: pointer;
+}
+
+button.show-password img {
+    width: 30px;
+}
+

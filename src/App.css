@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
+body,
+html {
+    padding: 0;
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: "Comforta";
+    src: local("Comforta"),
+    url("./Comfortaa-Regular.ttf") format("truetype");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+    font-family: 'Comforta', serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+html {
+    overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+    background: transparent;
+    border: unset;
+    cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+.separator {
+    margin: 0 20px;
 }

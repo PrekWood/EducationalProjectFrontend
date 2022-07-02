@@ -1,0 +1,116 @@
+.AdminNewTestQuestion {
+    background: #F9F9F9;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.AdminNewTestQuestion h1 {
+    position: absolute;
+    top: 3vh;
+    font-size: 43px;
+    font-weight: 100;
+    left: 5vw;
+}
+
+.test-questions-list.center {
+    right: 5vw;
+    left: 5vw;
+    width: 90vw;
+}
+.form-field label.force-open{
+    padding: 0 10px;
+    top: -12px;
+    left: 10px;
+    font-size: 22px;
+}
+.test-answer-header button{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.test-answer-header button:hover{
+    background: white;
+}
+.test-answers{
+    background: #ececec;
+    padding: 0 20px;
+    border-radius: 10px;
+    margin-left: 50px;
+    height: calc(80vh - 250px);
+}
+.test-question-form {
+    display: flex;
+    padding: 50px 50px;
+    width: calc(100% - 100px);
+    position: relative;
+    height: calc(80vh - 159px);
+}
+.test-question-form > *{
+    width: calc(50% - 50px);
+}
+.test-answers{
+    margin-left:50px;
+}
+#test_question_submit{
+    position: absolute;
+    bottom: 30px;
+    width: 20vw;
+    right: 50px;
+}
+
+.test-answer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.test-answer-list .chapter-admin .rename-form {
+    width: 100%;
+}
+.test-answer-list .chapter-admin .rename-form input{
+    margin: 0;
+}
+.test-answer-list button.chapter-preview {
+    padding: 13px 20px;
+}
+.rename-form input {
+    width: calc(100% - 15px);
+    padding: 5px;
+    border: 1px solid #b9b9b9;
+    border-radius: 10px;
+    font-size: 25px;
+}
+.AdminNewTestQuestion .form-checkbox label {
+    display: none;
+}
+
+.AdminNewTestQuestion .form-checkbox {
+    width: 34px;
+    height: 34px;
+    display: inherit;
+    margin: 0 15px 0 0;
+}
+.chapter-admin-container.answer {
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chapter-admin-container.answer .chapter-actions {
+    background: white;
+    position: initial;
+}
+.chapter-admin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}

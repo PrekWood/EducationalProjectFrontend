@@ -1,0 +1,16 @@
+.sub-chapters-list.center{
+    width: 90vw;
+}
+
+.sub-chapter-creation-form {
+    padding: 50px;
+}
+.sub-chapter-creation-form .flex{
+    display: flex;
+}
+.sub-chapter-creation-form .flex > *{
+    width: 100%;
+}
+.sub-chapter-creation-form .flex > .examples{
+    margin-left:50px
+}
