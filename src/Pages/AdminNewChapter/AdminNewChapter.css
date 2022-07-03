@@ -1,0 +1,12 @@
+.html-editor {
+    padding: 15px 17px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    outline: none;
+}
+.form-field.html-editor label {
+     padding: 0 10px;
+     top: -12px;
+     left: 10px;
+     font-size: 22px;
+}

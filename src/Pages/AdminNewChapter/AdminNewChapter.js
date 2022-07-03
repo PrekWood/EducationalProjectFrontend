@@ -10,6 +10,8 @@ import SubmitButton from "../../SharedComponents/SubmitButton/SubmitButton";
 import Textarea from "../../SharedComponents/Textarea/Textarea";
 import TestAnswer from "../../Classes/TestAnswer";
 import InputField from "../../SharedComponents/InputField/InputField";
+import HtmlEditor from "../../SharedComponents/HtmlEditor/HtmlEditor";
+import Help from "../../SharedComponents/Help/Help";
 
 export default function AdminNewChapter() {
 
@@ -73,6 +75,7 @@ export default function AdminNewChapter() {
         )
     }
 
+
     return <>
         <div className={"AdminNewTestQuestion"}>
             <h1>
@@ -100,11 +103,10 @@ export default function AdminNewChapter() {
                         />
                         <br/>
                         <br/>
-                        <Textarea
+
+                        <HtmlEditor
                             id="chapter_description"
                             name="Περιγραφή"
-                            rows={10}
-                            validation={Validate.isNotEmpty}
                         />
 
                         <SubmitButton
@@ -116,5 +118,7 @@ export default function AdminNewChapter() {
 
             </div>
         </div>
+
+        <Help/>
     </>
 }

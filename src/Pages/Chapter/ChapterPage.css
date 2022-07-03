@@ -23,15 +23,15 @@
     font-size: 5vh;
     font-weight: normal;
 }
-.Chapter .container .desc{
-    font-weight:  normal;
-    font-size:3vh;
-    margin: 40px;
+.Chapter .container .desc {
+    font-weight: normal;
+    font-size: 3vh;
+    margin: 0px 40px 40px 40px;
     padding: 20px;
     background: #eaeaea;
     border-radius: 30px;
-    width: 40vw;
-    max-height: calc(80vh - 135px);
+    width: calc(90vw - 120px);
+    max-height: calc(70vh - 95px);
     overflow: auto;
     display: block;
 }

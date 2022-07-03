@@ -39,7 +39,7 @@ export default function ChapterList(props) {
 
     return <>
         {props.formattedChapters.map((chapter, index) => {
-            return <>
+            return <React.Fragment key={`${chapter.type}-${chapter.type === "TEST" ? chapter.idChapter : chapter.id}`}>
                 {chapter.type === "CHAPTER" ? (
                     <ParentChapter
                         chapter={chapter}
@@ -63,7 +63,7 @@ export default function ChapterList(props) {
                         backgroundImageLeft={props.backgroundImageLeft}
                     />
                 )}
-            </>
+            </React.Fragment>
         })}
     </>
 }

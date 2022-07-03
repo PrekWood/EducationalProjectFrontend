@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 
 export default function Test(props) {
 
-
     function isChapterCurrent(){
         if(
             props.progress.nextObjectId === props.chapter.idChapter &&
@@ -14,19 +13,21 @@ export default function Test(props) {
     }
 
     function isChapterPassed(){
+        let isPassed=false;
         props.progress.chaptersPassed.map((chapterPassed)=>{
-            if(chapterPassed.id === props.chapter.id){
-                return true;
+            if(
+                chapterPassed.idObject == props.chapter.idChapter &&
+                chapterPassed.objectType === "TEST"
+            ){
+                isPassed=true
             }
         })
-        return false;
+        return isPassed;
     }
-
 
     function isReachable(){
         return isChapterCurrent() || isChapterPassed();
     }
-
 
     return <>
         <div
@@ -38,7 +39,7 @@ export default function Test(props) {
             }}
             onClick={()=>{
                 if(isReachable()){
-                    window.location.href = `/subchapter/${props.chapter.id}`
+                    window.location.href = `/test/${props.chapter.idChapter}`
                 }
             }}
         >

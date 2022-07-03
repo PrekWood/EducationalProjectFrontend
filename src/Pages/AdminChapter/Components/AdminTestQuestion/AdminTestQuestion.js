@@ -57,9 +57,9 @@ export default function AdminTestQuestion(props) {
 
                     <div className={`chapter-actions ${dropDownState ? "open" : ""}`}>
                         <button className={"chapter-preview"} onClick={() => {
-                            window.location.href = `/admin/chapter/${props.chapter.id}`;
+                            window.location.href = `/admin/question/${props.question.id}`;
                         }}>
-                            Προβολή
+                            Επεξεργασία
                         </button>
                         <button className={"chapter-dropdown-toggler"} onClick={() => {
                             seDropDownState(!dropDownState)

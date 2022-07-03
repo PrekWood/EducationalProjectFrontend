@@ -11,6 +11,7 @@ import SubChapter from "../../Classes/SubChapter";
 import AdminSubChapterList from "./Components/AdminSubChapterList/AdminSubChapterList";
 import AdminTestQuestionsList from "./Components/AdminTestQuestionsList/AdminTestQuestionsList";
 import TestQuestion from "../../Classes/TestQuestion";
+import Help from "../../SharedComponents/Help/Help";
 
 export default function AdminChapter() {
     // URL Param
@@ -90,6 +91,8 @@ export default function AdminChapter() {
                 chapter={chapter}
                 hydrateChapter={hydrateChapter}
             />
+
+            <Help/>
         </div>
     </>
 }

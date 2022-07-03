@@ -25,6 +25,7 @@
     top: 15vh;
     left: 5vw;
     border-radius: 10px;
+    overflow: auto;
 }
 
 .logout {

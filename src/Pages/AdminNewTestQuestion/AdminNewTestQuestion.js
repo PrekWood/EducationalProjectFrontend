@@ -14,6 +14,7 @@ import TestAnswer from "../../Classes/TestAnswer";
 import AdminSubChapter from "../AdminChapter/Components/AdminSubChapter/AdminSubChapter";
 import AdminTestAnswer from "./Components/AdminTestAnswer/AdminTestAnswer";
 import TestQuestion from "../../Classes/TestQuestion";
+import Help from "../../SharedComponents/Help/Help";
 
 export default function AdminNewTestQuestion() {
     // URL Param
@@ -143,7 +144,7 @@ export default function AdminNewTestQuestion() {
                     formFields[formFieldIndex].attributes["data-id"].value,
                     formFields[formFieldIndex].value
                 );
-                answerToPush.correct = answerToPush.id === correctAnswer.id
+                answerToPush.correct = answerToPush.id == correctAnswer.id
                 answers.push(answerToPush);
             }
         }
@@ -295,5 +296,7 @@ export default function AdminNewTestQuestion() {
 
             </div>
         </div>
+
+        <Help/>
     </>
 }

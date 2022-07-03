@@ -2,12 +2,14 @@ import React, {useEffect, useState} from "react";
 import "./Chapters.css";
 import chaptersSvg from "./imgs/chaptersSvg.svg";
 import {ReactComponent as LogoutSvg} from "./imgs/logout.svg";
+import {ReactComponent as InfoSvg} from "./imgs/info.svg";
 import ChapterList from "./Components/ChapterList/ChapterList";
 import User from "../../Classes/User";
 import Chapter from "../../Classes/Chapter";
 import Validate from "../../Classes/Validate";
 import ButtonNavigation from "./Components/ButtonNavigation/ButtonNavigation";
 import SubmitButton from "../../SharedComponents/SubmitButton/SubmitButton";
+import Help from "../../SharedComponents/Help/Help";
 
 export default function Chapters(){
 
@@ -67,6 +69,7 @@ export default function Chapters(){
                 parentChapter.type = "CHAPTER";
                 tmpFormattedChapters.push(parentChapter);
             }
+
             // Add subchapters
             for (let childChapterIndex = 0; childChapterIndex < parentChapter.subChapters.length; childChapterIndex++) {
                 let childChapter = parentChapter.subChapters[childChapterIndex];
@@ -81,6 +84,7 @@ export default function Chapters(){
                 idChapter: parentChapter.id
             });
         }
+
         setFormattedChapters(tmpFormattedChapters);
     }, [chapters])
 
@@ -108,19 +112,66 @@ export default function Chapters(){
         }
 
         for(let chapterIndex=0; chapterIndex < formattedChapters.length; chapterIndex++){
-
             let chapter = formattedChapters[chapterIndex];
-            if(chapter.type === "CHAPTER" && user.progress.nextObjectId === chapter.id){
+            if(
+                user.progress.nextObjectType === chapter.type &&
+                user.progress.nextObjectType === "CHAPTER" &&
+                user.progress.nextObjectId === chapter.id
+            ){
                 window.location.href=`/chapter/${chapter.id}`
             }
-            if(chapter.type === "SUBCHAPTER" && user.progress.nextObjectId === chapter.id){
+            if(
+                user.progress.nextObjectType === chapter.type &&
+                user.progress.nextObjectType === "SUBCHAPTER" &&
+                user.progress.nextObjectId === chapter.id
+            ){
                 window.location.href=`/subchapter/${chapter.id}`
             }
-            if(chapter.type === "TEST" && user.progress.nextObjectId === chapter.id){
-                window.location.href=`/test/${chapter.id}`
+            if(
+                user.progress.nextObjectType === chapter.type &&
+                user.progress.nextObjectType === "TEST" &&
+                user.progress.nextObjectId === chapter.idChapter
+            ){
+                window.location.href=`/test/${chapter.idChapter}`
             }
         }
     }
+
+    const [mostCommonErrorType, setMostCommonErrorType] = useState(null);
+    useEffect(()=>{
+        if(Validate.isEmpty(user) || user.isEmpty()){
+            return;
+        }
+        user.getMostCommonErrorType(
+            (resp)=>{
+                const errorType = resp.data
+                let errorTypeText = null;
+                switch (errorType){
+                    case "SYNTACTICAL":
+                        errorTypeText = "Συντακτικά"
+                        break;
+                    case "LOGICAL":
+                        errorTypeText = "Λογικής"
+                        break;
+                    case "CARELESSNESS":
+                        errorTypeText = "Απροσεξίας"
+                        break;
+                    case "MISSPELLING":
+                        errorTypeText = "Ορθογραφικα"
+                        break;
+                    default:
+                        errorTypeText = null
+                        break;
+                }
+
+                if(errorTypeText == null){
+                    return;
+                }
+
+                setMostCommonErrorType(errorTypeText);
+            }
+        )
+    },[user])
 
     return <>
         <div
@@ -152,7 +203,19 @@ export default function Chapters(){
                 text={"Συνέχεια"}
                 callback={goToNextChapter}
             />
+
+            {Validate.isEmpty(mostCommonErrorType) ? "" :(
+                <>
+                    <div className={"most-common-error-type-popup"}>
+                        <InfoSvg/>
+                        Έχουμε παρατηρήσει πως κάνεις πολλά λάθη {mostCommonErrorType}.
+                        Προσπάθησε να τα βελτιώσεις
+                    </div>
+                </>
+            )}
         </div>
+
+        <Help/>
 
     </>
 }

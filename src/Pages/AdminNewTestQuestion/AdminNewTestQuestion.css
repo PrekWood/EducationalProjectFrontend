@@ -64,6 +64,7 @@
     bottom: 30px;
     width: 20vw;
     right: 50px;
+    z-index:99;
 }
 
 .test-answer-header {

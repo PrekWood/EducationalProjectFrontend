@@ -28,12 +28,12 @@ export default function AdminSubChapterList(props) {
             <div className={"chapter-admin-list"}>
                 {Validate.isEmpty(props.chapter) || Validate.isEmpty(props.chapter.subChapters) ? "" :
                     props.chapter.subChapters.map((subChapter) => {
-                        return <>
+                        return <React.Fragment key={`admin-sub-chaper-${subChapter.id}`}>
                             <AdminSubChapter
                                 subChapter={subChapter}
                                 reHydrateListing={props.hydrateChapter}
                             />
-                        </>
+                        </React.Fragment>
                     })
                 }
             </div>

@@ -73,9 +73,9 @@ export default function AdminSubChapter(props) {
 
                     <div className={`chapter-actions ${dropDownState ? "open" : ""}`}>
                         <button className={"chapter-preview"} onClick={() => {
-                            window.location.href = `/admin/chapter/${props.chapter.id}`;
+                            window.location.href = `/admin/subchapter/${props.subChapter.id}`;
                         }}>
-                            Προβολή
+                            Επεξεργασία
                         </button>
                         <button className={"chapter-dropdown-toggler"} onClick={() => {
                             seDropDownState(!dropDownState)
@@ -83,12 +83,6 @@ export default function AdminSubChapter(props) {
                             <ArrowSvg/>
                         </button>
                         <div className={`dropdown-list ${dropDownState ? "open" : ""}`}>
-                            <button onClick={() => {
-                                setRenameState(true);
-                                seDropDownState(false);
-                            }}>
-                                Μετονομασία
-                            </button>
                             <button onClick={() => {
                                 deleteChapter()
                             }}>

@@ -151,4 +151,16 @@ export default class User extends Model {
         });
     }
 
+    getMostCommonErrorType(successMethod, errorMethod) {
+        axios({
+            method: 'get',
+            url: `${window.API_URL}/user/errors-statistics`,
+            headers: this.getHeaders(this.token),
+        }).then(function (response) {
+            successMethod(response);
+        }).catch(function (error) {
+            errorMethod(error);
+        });
+    }
+
 }

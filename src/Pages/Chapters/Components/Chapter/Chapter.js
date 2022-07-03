@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 export default function Chapter(props) {
 
 
-
     function isChapterCurrent(){
         if(
             props.progress.nextObjectId === props.chapter.id &&

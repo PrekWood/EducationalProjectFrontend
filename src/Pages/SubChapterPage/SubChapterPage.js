@@ -9,6 +9,7 @@ import TestQuestion from "../../Classes/TestQuestion";
 import Chapter from "../../Classes/Chapter";
 import SubmitButton from "../../SharedComponents/SubmitButton/SubmitButton";
 import Progress from "../../Classes/Progress";
+import Help from "../../SharedComponents/Help/Help";
 
 export default function SubChapterPage() {
     // URL Param
@@ -32,7 +33,7 @@ export default function SubChapterPage() {
         )
     }, []);
 
-    // ChapterPage
+    // PreviousTries
     const [subChapter, setSubChapter] = useState(new Chapter());
     function hydrateSubChapter() {
         SubChapter.getDetails(
@@ -56,7 +57,7 @@ export default function SubChapterPage() {
 
 
     return <>
-        <div className={"Chapter"}>
+        <div className={"Chapter SubChapter"}>
 
             <div className={"container"}>
                 <div className={"header"}>
@@ -68,13 +69,14 @@ export default function SubChapterPage() {
                     <h1>{subChapter.name}</h1>
                 </div>
 
-                <span className={"desc"}>
-                    {subChapter.theory}
-                </span>
+                <span
+                    className={"desc"}
+                    dangerouslySetInnerHTML={{ __html: subChapter.theory }}
+                ></span>
 
                 <span className={"examples"}>
                     <span className={"headline"}>Παράδειγμα</span>
-                    {subChapter.examples}
+                    <span dangerouslySetInnerHTML={{ __html: subChapter.examples }}></span>
                 </span>
 
                 <SubmitButton
@@ -87,9 +89,11 @@ export default function SubChapterPage() {
                         );
                     }}
                     id={"next_step_button"}
-                    text="Ενημέρωση"
+                    text="Συνέχεια"
                 />
             </div>
         </div>
+
+        <Help/>
     </>
 }

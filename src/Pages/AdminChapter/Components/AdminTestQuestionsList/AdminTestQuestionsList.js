@@ -22,12 +22,12 @@ export default function AdminTestQuestionsList(props) {
             </div>
             <div className={"chapter-admin-list"}>
                 {props.chapter.testQuestions.map((question) => {
-                    return <>
+                    return <React.Fragment key={`admin-test-question-${question.id}`}>
                         <AdminTestQuestion
                             question={question}
                             hydrateChapter={props.hydrateChapter}
                         />
-                    </>
+                    </React.Fragment>
                 })}
             </div>
         </div>

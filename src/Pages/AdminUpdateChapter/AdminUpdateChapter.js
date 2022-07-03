@@ -9,6 +9,8 @@ import SubmitButton from "../../SharedComponents/SubmitButton/SubmitButton";
 import Textarea from "../../SharedComponents/Textarea/Textarea";
 import InputField from "../../SharedComponents/InputField/InputField";
 import TestQuestion from "../../Classes/TestQuestion";
+import HtmlEditor from "../../SharedComponents/HtmlEditor/HtmlEditor";
+import Help from "../../SharedComponents/Help/Help";
 
 export default function AdminUpdateChapter() {
 
@@ -124,11 +126,10 @@ export default function AdminUpdateChapter() {
                         />
                         <br/>
                         <br/>
-                        <Textarea
+
+                        <HtmlEditor
                             id="chapter_description"
                             name="Περιγραφή"
-                            rows={10}
-                            validation={Validate.isNotEmpty}
                             defaultValue={chapter.description}
                         />
 
@@ -141,5 +142,7 @@ export default function AdminUpdateChapter() {
 
             </div>
         </div>
+
+        <Help/>
     </>
 }

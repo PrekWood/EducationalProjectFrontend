@@ -49,4 +49,16 @@ export default class Progress extends Model {
             errorMethod(error);
         });
     }
+    static markTestAsRead(idChapter, grade, successMethod, errorMethod) {
+        const user = User.loadUserFromLocalStorage();
+        axios({
+            method: 'put',
+            url: `${window.API_URL}/progress/test/${idChapter}/?grade=${grade}`,
+            headers: this.getHeaders(user.token),
+        }).then(function (response) {
+            successMethod(response);
+        }).catch(function (error) {
+            errorMethod(error);
+        });
+    }
 }

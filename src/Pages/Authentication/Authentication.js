@@ -5,6 +5,7 @@ import LoginForm from "./Components/LoginForm/LoginForm";
 import RegisterForm from "./Components/RegisterForm/RegisterForm";
 import Validate from "../../Classes/Validate";
 import backgroundImg from "./imgs/backgroundImg.png";
+import Help from "../../SharedComponents/Help/Help";
 
 export default function Authentication() {
 
@@ -37,6 +38,8 @@ export default function Authentication() {
                 />
 
             </div>
+
+            <Help/>
         </>
     );
 }

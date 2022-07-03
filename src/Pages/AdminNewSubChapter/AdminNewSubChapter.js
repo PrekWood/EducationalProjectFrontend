@@ -14,6 +14,8 @@ import TestAnswer from "../../Classes/TestAnswer";
 import AdminSubChapter from "../AdminChapter/Components/AdminSubChapter/AdminSubChapter";
 import TestQuestion from "../../Classes/TestQuestion";
 import InputField from "../../SharedComponents/InputField/InputField";
+import HtmlEditor from "../../SharedComponents/HtmlEditor/HtmlEditor";
+import Help from "../../SharedComponents/Help/Help";
 
 export default function AdminNewSubChapter() {
     // URL Param
@@ -140,19 +142,15 @@ export default function AdminNewSubChapter() {
                         <br/>
                         <br/>
                         <div className={"flex"}>
-                            <Textarea
+                            <HtmlEditor
                                 id="subchapter_theory"
                                 name="Θεωρία"
-                                rows={10}
-                                validation={Validate.isNotEmpty}
                             />
 
                             <div className={"examples"}>
-                                <Textarea
+                                <HtmlEditor
                                     id="subchapter_examples"
                                     name="Παραδείγματα"
-                                    rows={10}
-                                    validation={Validate.isNotEmpty}
                                 />
                             </div>
                         </div>
@@ -167,5 +165,7 @@ export default function AdminNewSubChapter() {
 
             </div>
         </div>
+
+        <Help/>
     </>
 }

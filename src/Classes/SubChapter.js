@@ -11,6 +11,7 @@ export default class SubChapter extends Model {
         this.name = null;
         this.idChapter = null;
         this.examples = null;
+        this.chapter = null;
     }
 
     static castToSubChapter(user) {
@@ -20,6 +21,7 @@ export default class SubChapter extends Model {
         subChapterObj.name = user.name;
         subChapterObj.idChapter = user.idChapter;
         subChapterObj.examples = user.examples;
+        subChapterObj.chapter = user.chapter;
         return subChapterObj;
     }
 
@@ -55,6 +57,24 @@ export default class SubChapter extends Model {
         axios({
             method: 'post',
             url: `${window.API_URL}/chapter/${this.idChapter}/subchapter`,
+            headers: this.getHeaders(user.token),
+            data: {
+                name:this.name,
+                theory:this.theory,
+                examples:this.examples,
+            }
+        }).then(function (response) {
+            successMethod(response);
+        }).catch(function (error) {
+            errorMethod(error);
+        });
+    }
+
+    update(successMethod, errorMethod) {
+        const user = User.loadUserFromLocalStorage();
+        axios({
+            method: 'put',
+            url: `${window.API_URL}/subchapter/${this.id}/`,
             headers: this.getHeaders(user.token),
             data: {
                 name:this.name,

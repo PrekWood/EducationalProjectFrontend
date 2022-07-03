@@ -12,6 +12,8 @@ export default class Chapter extends Model {
         this.dateAdd = null;
         this.subChapters = [];
         this.testQuestions = [];
+        this.bestAttempt = null;
+        this.completionRate = null;
     }
 
     static castToChapter(chapter) {
@@ -22,6 +24,8 @@ export default class Chapter extends Model {
         chapterObj.dateAdd = chapter.dateAdd;
         chapterObj.subChapters = chapter.subChapters;
         chapterObj.testQuestions = chapter.testQuestions;
+        chapterObj.bestAttempt = chapter.bestAttempt;
+        chapterObj.completionRate = chapter.completionRate;
         return chapterObj;
     }
 
@@ -123,8 +127,6 @@ export default class Chapter extends Model {
             errorMethod(error);
         });
     }
-
-
 
     static getNextName(successMethod, errorMethod){
         const user = User.loadUserFromLocalStorage();

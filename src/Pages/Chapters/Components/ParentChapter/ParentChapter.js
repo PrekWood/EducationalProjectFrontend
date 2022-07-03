@@ -1,4 +1,7 @@
 import React, {useEffect, useState} from "react";
+import Validate from "../../../../Classes/Validate";
+import {ReactComponent as StarSvg} from "../../../TestPage/imgs/star.svg";
+import {ReactComponent as EmptyStarSvg} from "./../../imgs/emptyStar.svg";
 
 export default function ParentChapter(props) {
 
@@ -16,6 +19,7 @@ export default function ParentChapter(props) {
     }
 
     function isChapterPassed(){
+
         let isPassed = false;
         props.progress.chaptersPassed.map((chapterPassed)=>{
             if(
@@ -25,6 +29,7 @@ export default function ParentChapter(props) {
                 isPassed = true;
             }
         })
+
         return isPassed;
     }
 
@@ -49,6 +54,29 @@ export default function ParentChapter(props) {
             <span>
                 {props.parentIndex}
             </span>
+            {Validate.isEmpty(props.chapter.bestAttempt) ? "" : (
+                <div className={"stars"}>
+                    {props.chapter.bestAttempt === "ONE" ?
+                        <>
+                            <StarSvg/>
+                            <EmptyStarSvg/>
+                            <EmptyStarSvg/>
+                        </>
+                    : props.chapter.bestAttempt === "TWO" ?
+                        <>
+                            <StarSvg/>
+                            <StarSvg/>
+                            <EmptyStarSvg/>
+                        </>
+                    :
+                        <>
+                            <StarSvg/>
+                            <StarSvg/>
+                            <StarSvg/>
+                        </>
+                    }
+                </div>
+            )}
         </div>
     </>
 }

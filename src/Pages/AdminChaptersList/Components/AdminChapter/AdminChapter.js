@@ -70,6 +70,7 @@ export default function AdminChapter(props) {
                             }
                         </span>
                         <span className={"chapter-small"}>{props.chapter.dateAdd}</span>
+                        <span className={"chapter-small"}>{props.chapter.completionRate == null ? "-" : `${props.chapter.completionRate} %`}</span>
                         <div></div>
                     </div>
 
@@ -85,19 +86,14 @@ export default function AdminChapter(props) {
                             <ArrowSvg/>
                         </button>
                         <div className={`dropdown-list ${dropDownState ? "open" : ""}`}>
+
                             <button onClick={() => {
-                                setRenameState(true);
-                                seDropDownState(false);
-                            }}>
-                                Μετονομασία
-                            </button>
-                            <button onClick={() => {
-                                window.location.href=`/admin/chapter/${props.chapter.id}/update`
+                                window.location.href = `/admin/chapter/${props.chapter.id}/update`
                             }}>
                                 Επεξεργασία
                             </button>
                             <button onClick={() => {
-                                if(window.confirm("Είστε σίγουρος πως θέλετε να διαγράψετε το συγκεκριμένο κεφάλαιο και τα περιεχόμενα του;")){
+                                if (window.confirm("Είστε σίγουρος πως θέλετε να διαγράψετε το συγκεκριμένο κεφάλαιο και τα περιεχόμενα του;")) {
                                     deleteChapter()
                                 }
                             }}>

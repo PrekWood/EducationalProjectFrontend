@@ -1,8 +1,9 @@
-.chapters-container{
+.chapters-container {
     height: 100vh;
-    width:100vw;
+    width: 100vw;
     background-size: cover;
 }
+
 .chapter {
     background: #00B0DC;
     width: 6vh;
@@ -45,9 +46,10 @@
     margin-right: 50px;
 }
 
-.chapter{
+.chapter {
     cursor: pointer;
 }
+
 .chapter.parent.current:hover {
     box-shadow: 0 0 50px white;
 
@@ -57,15 +59,17 @@
     font-size: 10vh;
     line-height: 10vh;
 }
-#logout_button svg{
+
+#logout_button svg {
     height: 30px;
     width: auto;
     margin-left: -8px;
 }
-#logout_button{
+
+#logout_button {
     position: fixed;
     top: 2vh;
-    left:2vh;
+    left: 2vh;
     background: white;
     width: 7vh;
     height: 7vh;
@@ -75,13 +79,16 @@
     justify-content: center;
     opacity: .7;
 }
-#logout_button:hover{
+
+#logout_button:hover {
     opacity: 1;
 }
+
 .chapter.test {
     background: yellow;
     border: 1.5vh solid #ffff92;
 }
+
 .chapter.current::after {
     position: absolute;
     top: -60px;
@@ -93,15 +100,16 @@
     content: '';
     animation: upAndDown 1s infinite;
 }
+
 @keyframes upAndDown {
-    0%{
-        top:-50px;
+    0% {
+        top: -50px;
     }
-    50%{
-        top:-60px;
+    50% {
+        top: -60px;
     }
-    100%{
-        top:-50px;
+    100% {
+        top: -50px;
     }
 }
 
@@ -110,4 +118,64 @@ button#play_next_chapter {
     bottom: 5vh;
     width: 20vw;
     left: 40vw;
+}
+
+.chapter .stars {
+    display: flex;
+    position: absolute;
+    top: -9vh;
+}
+
+.chapter .stars svg {
+    height: 7vh;
+    width: auto;
+}
+
+.chapter .stars svg:first-child {
+    margin-top: 20px;
+    transform: rotate(45deg);
+}
+
+.chapter .stars svg:last-child {
+    margin-top: 20px;
+    transform: rotate(-45deg);
+}
+
+.most-common-error-type-popup {
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+    background: #0088ffa8;
+    color: white;
+    padding: 15px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    max-width: 20vw;
+    line-height: 22px;
+    animation: animateInAndOutSlowly 10s forwards;
+}
+
+.most-common-error-type-popup svg {
+    margin-right: 20px;
+    height: auto;
+    width: 5vw;
+}
+
+@keyframes animateInAndOutSlowly {
+    0% {
+        right: -50vw;
+    }
+    5% {
+        right: -50vw;
+    }
+    10% {
+        right: 2vh;
+    }
+    95% {
+        right: 2vh;
+    }
+    100% {
+        right: -50vw;
+    }
 }

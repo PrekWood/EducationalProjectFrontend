@@ -12,6 +12,7 @@ export default function Select(props) {
 
     useEffect(() => {
         setOptions(props.options);
+        console.log("props.options");
         if (!Validate.isArrayEmpty(props.options)) {
             const optionsWithSelectedAttr = props.options.filter((option) => { return option.selected });
             if (selectedOption == null) {
@@ -31,7 +32,6 @@ export default function Select(props) {
     function closeDropDownList() {
         setDropDownState("closed");
     }
-
 
     let callback = ()=>{};
     if ("callback" in props) {

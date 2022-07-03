@@ -13,6 +13,8 @@ export default class TestQuestion extends Model {
         this.difficulty = null;
         this.errorType = null;
         this.answers = null;
+        this.answerList = [];
+        this.chapter = [];
     }
 
     static castToTestQuestion(testQ) {
@@ -26,7 +28,22 @@ export default class TestQuestion extends Model {
         testQuestion.errorType = testQ.errorType;
         testQuestion.answers = testQ.answers;
         testQuestion.testQuestions = testQ.testQuestions;
+        testQuestion.answerList = testQ.answerList;
+        testQuestion.chapter = testQ.chapter;
         return testQuestion;
+    }
+
+    static getDetails(idQuestion, successMethod, errorMethod) {
+        const user = User.loadUserFromLocalStorage();
+        axios({
+            method: 'get',
+            url: `${window.API_URL}/question/${idQuestion}/`,
+            headers: this.getHeaders(user.token),
+        }).then(function (response) {
+            successMethod(response);
+        }).catch(function (error) {
+            errorMethod(error);
+        });
     }
 
     create(successMethod, errorMethod) {
@@ -34,6 +51,26 @@ export default class TestQuestion extends Model {
         axios({
             method: 'post',
             url: `${window.API_URL}/chapter/${this.idChapter}/question`,
+            headers: this.getHeaders(user.token),
+            data:{
+                "question":this.question,
+                "type":this.type,
+                "difficulty":this.difficulty,
+                "errorType":this.errorType,
+                "answers":this.answers,
+            }
+        }).then(function (response) {
+            successMethod(response);
+        }).catch(function (error) {
+            errorMethod(error);
+        });
+    }
+
+    update(successMethod, errorMethod) {
+        const user = User.loadUserFromLocalStorage();
+        axios({
+            method: 'put',
+            url: `${window.API_URL}/question/${this.id}/`,
             headers: this.getHeaders(user.token),
             data:{
                 "question":this.question,

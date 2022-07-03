@@ -9,6 +9,7 @@ import TestQuestion from "../../Classes/TestQuestion";
 import Chapter from "../../Classes/Chapter";
 import SubmitButton from "../../SharedComponents/SubmitButton/SubmitButton";
 import Progress from "../../Classes/Progress";
+import Help from "../../SharedComponents/Help/Help";
 
 export default function ChapterPage() {
     // URL Param
@@ -32,7 +33,7 @@ export default function ChapterPage() {
         )
     }, []);
 
-    // ChapterPage
+    // PreviousTries
     const [chapter, setChapter] = useState(new Chapter());
 
     function hydrateChapter() {
@@ -78,8 +79,10 @@ export default function ChapterPage() {
                     <h1>{chapter.name}</h1>
                 </div>
 
-                <span className={"desc"}>
-                    {chapter.description}
+                <span
+                    className={"desc"}
+                    dangerouslySetInnerHTML={{ __html: chapter.description }}
+                >
                 </span>
 
                 <SubmitButton
@@ -92,9 +95,11 @@ export default function ChapterPage() {
                         );
                     }}
                     id={"next_step_button"}
-                    text="Ενημέρωση"
+                    text="Συνέχεια"
                 />
             </div>
         </div>
+
+        <Help/>
     </>
 }

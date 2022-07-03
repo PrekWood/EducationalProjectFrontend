@@ -6,6 +6,7 @@ import {ReactComponent as LogoutSvg} from "./imgs/logout.svg";
 import {ReactComponent as AddSvg} from "./imgs/add.svg";
 import Validate from "../../Classes/Validate";
 import AdminChapter from "./Components/AdminChapter/AdminChapter";
+import Help from "../../SharedComponents/Help/Help";
 
 export default function AdminChaptersList() {
 
@@ -74,6 +75,16 @@ export default function AdminChaptersList() {
                     </button>
                 </div>
                 <div className={"chapter-admin-list"}>
+                    <div className="chapter-admin-container">
+                        <div className="chapter-admin">
+                            <span className="id chapter-small">ID</span>
+                            <span className="chapter-small">Όνομα</span>
+                            <span className="chapter-small">Υποκεφάλαια</span>
+                            <span className="chapter-small">Ημερομηνία</span>
+                            <span className="chapter-small">Ποσοστό επιτυχίας</span>
+                            <span className="chapter-small">Ενέργειες</span>
+                        </div>
+                    </div>
                     {chapters.map((chapter) => {
                         return <>
                             <AdminChapter
@@ -86,5 +97,7 @@ export default function AdminChaptersList() {
                 </div>
             </div>
         </div>
+
+        <Help/>
     </>
 }

@@ -1,0 +1,271 @@
+.TestPage {
+    background: #FAD17F;
+    height: 100vh;
+    overflow: auto;
+}
+
+.TestPage .container {
+    background: white;
+    padding: 2vw;
+    margin-bottom: 40px;
+    border-radius: 5vh;
+    position: relative;
+}
+
+.TestPage h1 {
+    font-size: 40px;
+    font-weight: normal;
+    margin: 0 0 40px 0;
+    display: flex;
+    align-items: center;
+}
+
+.TestPage h1 button {
+    margin-right: 20px;
+}
+
+.TestPage h1 button svg {
+    width: 20px;
+    height: auto;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 15px;
+    background: white;
+    margin-bottom: 40px;
+    border-radius: 31px;
+    display: flex;
+}
+
+.progress-bar-inner {
+    background: limegreen;
+    border-radius: 25px;
+    transition: width .5s ease;
+}
+
+.TestPage .fixed-header {
+    padding: 5vh 5vw;
+    position: fixed;
+    top: 0;
+    width: 90vw;
+    background: #FAD17F;
+    left: 0;
+    z-index: 10;
+}
+
+.TestPage .questions {
+    margin-top: calc(5vh + 180px);
+    padding-bottom: 20vh;
+}
+
+.TestPage #test_confirmation {
+    position: fixed;
+    bottom: 5vh;
+    width: 30vw;
+    left: 35vw;
+}
+
+.TestPage span.question-test {
+    font-size: 30px;
+}
+
+.TestPage .answer label {
+    cursor: pointer;
+}
+
+.TestPage .answer input {
+    margin: 0 15px 0 0;
+    width: 20px;
+    height: 20px;
+}
+
+.TestPage .answer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.TestPage .answer-list {
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.TestPage .difficulty-flag {
+    position: absolute;
+    top: -20px;
+    right: 60px;
+}
+
+.TestPage .difficulty-flag svg {
+    height: 11vh;
+    width: auto;
+}
+
+.test-results.full {
+    overflow: auto;
+    width: 90vw;
+    height: 90vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fad17f;
+    z-index: 9999999;
+    padding: 5vh 5vw;
+}
+
+
+.test-results.full .test-results-imoji {
+    background: white;
+    padding: 2vw;
+    margin-bottom: 40px;
+    border-radius: 5vh;
+    position: relative;
+    width: calc(90vw - 5vw);
+}
+
+.test-results.full .test-results-imoji img {
+    max-height: 30vh;
+    display: block;
+    margin: auto;
+}
+
+.test-results.full .test-results-imoji h2 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.test-results.full .test-results-imoji .stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.test-results.full .test-results-imoji .stars svg {
+    height: 13vh;
+    width: auto;
+    margin-right: 15px;
+}
+
+.test-results.full .test-results-imoji .stars svg:last-child {
+    margin: 0;
+}
+
+.TestPage .questions {
+    padding: 5vh 5vw;
+}
+
+.TestPage .answer.wrong {
+    color: red;
+}
+
+.TestPage .answer.correct {
+    color: limegreen;
+}
+
+.wrong-answers {
+    margin-left: 20px;
+    font-weight: normal;
+    text-align: center;
+    font-size: 30px;
+    color: #939393
+}
+
+.previous-tries {
+    font-size: 20px;
+    color: #939393;
+    display: block;
+}
+
+
+.previous-tries-list {
+    margin: 20px;
+    background: #efefef;
+    border-radius: 20px;
+}
+
+.previous-tries-list .attempt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.previous-tries-list .attempt .stars {
+    display: flex;
+    align-items: center;
+}
+
+.previous-tries-list .attempt .stars svg {
+    height: 30px;
+    width: auto;
+}
+
+.previous-tries-list .attempt > * {
+    width: 100%;
+}
+
+.previous-tries-list .attempt.headers {
+    background: #fad17f;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 20px 20px 0 0;
+    border: unset;
+}
+
+.previous-tries-list .attempt {
+    font-size: 19px;
+    padding: 15px;
+    border-bottom: 1px solid #0000001f;
+}
+
+.previous-tries-list .attempt:last-child {
+    border: unset;
+}
+
+#retry_button {
+    position: fixed;
+    bottom: 8vh;
+    width: 30vw;
+    right: 15vh;
+}
+
+.finish-modal {
+    position: fixed;
+    top: 5vh;
+    left: 5vh;
+    background: white;
+    right: 5vh;
+    bottom: 5vh;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.finish-modal img {
+    max-height: 38vh;
+    margin: 5vh auto;
+    display: block;
+}
+
+.finish-modal h2 {
+    font-size: 60px;
+    text-align: center;
+}
+
+.finish-modal span {
+    display: block;
+    margin: auto;
+    width: max-content;
+    font-size: 33px;
+    margin-top: 0;
+}
+
+.finish-modal button#next_step_button {
+}
