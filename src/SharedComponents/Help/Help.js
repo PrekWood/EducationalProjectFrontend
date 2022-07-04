@@ -9,7 +9,7 @@ function Help(props) {
             <button
                 id={"help_button"}
                 onClick={()=>{
-                    window.location.href=`/user-manual`;
+                    window.location.href=`/user-manual?page=${props.page}`;
                 }}
             >
                 <img src={helpImg}/>

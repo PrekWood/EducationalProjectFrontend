@@ -98,6 +98,6 @@ export default function AdminChaptersList() {
             </div>
         </div>
 
-        <Help/>
+        <Help page={14}/>
     </>
 }

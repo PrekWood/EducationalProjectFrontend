@@ -15,6 +15,8 @@ export default class TestQuestion extends Model {
         this.answers = null;
         this.answerList = [];
         this.chapter = [];
+        this.idSubChapter = [];
+        this.subChapter = [];
     }
 
     static castToTestQuestion(testQ) {
@@ -30,6 +32,8 @@ export default class TestQuestion extends Model {
         testQuestion.testQuestions = testQ.testQuestions;
         testQuestion.answerList = testQ.answerList;
         testQuestion.chapter = testQ.chapter;
+        testQuestion.idSubChapter = testQ.idSubChapter;
+        testQuestion.subChapter = testQ.subChapter;
         return testQuestion;
     }
 
@@ -58,6 +62,7 @@ export default class TestQuestion extends Model {
                 "difficulty":this.difficulty,
                 "errorType":this.errorType,
                 "answers":this.answers,
+                "idSubChapter":this.idSubChapter,
             }
         }).then(function (response) {
             successMethod(response);
@@ -78,6 +83,7 @@ export default class TestQuestion extends Model {
                 "difficulty":this.difficulty,
                 "errorType":this.errorType,
                 "answers":this.answers,
+                "idSubChapter":this.idSubChapter,
             }
         }).then(function (response) {
             successMethod(response);

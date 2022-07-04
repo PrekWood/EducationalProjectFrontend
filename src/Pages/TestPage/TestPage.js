@@ -119,6 +119,7 @@ export default function TestPage() {
 
         if(answers.length !== questions.length){
             alert("Παρακαλώ συμπληρώστε όλες τις ερωτήσεις")
+            setLoadingState(false);
             return;
         }
 
@@ -187,9 +188,8 @@ export default function TestPage() {
             />
 
             <LoadingAnimation state={loadingState}/>
-
         </div>
 
-        <Help/>
+        <Help page={11}/>
     </>
 }

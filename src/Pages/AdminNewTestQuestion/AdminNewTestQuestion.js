@@ -125,6 +125,7 @@ export default function AdminNewTestQuestion() {
         let difficulty = null;
         let type = null;
         let errorType = null;
+        let idSubChapter = null;
         let answers = [];
         for (let formFieldIndex = 0; formFieldIndex < formFields.length; formFieldIndex++) {
             if (formFields[formFieldIndex].id === "test_question_question") {
@@ -138,6 +139,9 @@ export default function AdminNewTestQuestion() {
             }
             if (formFields[formFieldIndex].id === "test_question_error") {
                 errorType = formFields[formFieldIndex].value
+            }
+            if (formFields[formFieldIndex].id === "test_question_subchapter") {
+                idSubChapter = formFields[formFieldIndex].value
             }
             if (formFields[formFieldIndex].name === "chapter-name-field") {
                 let answerToPush = new TestAnswer(
@@ -156,6 +160,7 @@ export default function AdminNewTestQuestion() {
         testQuestion.difficulty = difficulty;
         testQuestion.errorType = errorType;
         testQuestion.answers = answers;
+        testQuestion.idSubChapter = idSubChapter;
         testQuestion.create(
             ()=>{
                 window.location.href = `/admin/chapter/${idChapter}`;
@@ -164,8 +169,18 @@ export default function AdminNewTestQuestion() {
                 alert("error");
             }
         )
+    }
 
-
+    function getSubChapterOptions(){
+        let optionsList = [];
+        chapter.subChapters.map((subChapter)=>{
+            optionsList.push({
+                "id": subChapter.id,
+                "name": subChapter.name,
+                "value": subChapter.id,
+            })
+        })
+        return optionsList
     }
 
     return <>
@@ -236,6 +251,7 @@ export default function AdminNewTestQuestion() {
                                     }
                                 ]}
                             />
+
                             <Select
                                 id="test_question_error"
                                 name="Τύπος Σφάλματος"
@@ -263,6 +279,15 @@ export default function AdminNewTestQuestion() {
                                     }
                                 ]}
                             />
+
+                            {Validate.isEmpty(chapter) ? "" : (
+                                <Select
+                                    id="test_question_subchapter"
+                                    name="Θεωρία"
+                                    options={getSubChapterOptions()}
+                                />
+                            )}
+
                             <SubmitButton
                                 id={"test_question_submit"}
                                 text="Δημιουργία"
@@ -297,6 +322,6 @@ export default function AdminNewTestQuestion() {
             </div>
         </div>
 
-        <Help/>
+        <Help page={27}/>
     </>
 }

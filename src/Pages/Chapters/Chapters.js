@@ -215,7 +215,6 @@ export default function Chapters(){
             )}
         </div>
 
-        <Help/>
-
+        <Help page={7}/>
     </>
 }

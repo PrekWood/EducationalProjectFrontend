@@ -143,6 +143,6 @@ export default function AdminUpdateChapter() {
             </div>
         </div>
 
-        <Help/>
+        <Help page={17}/>
     </>
 }

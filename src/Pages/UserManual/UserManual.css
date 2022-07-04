@@ -14,3 +14,11 @@
     height: 100vh;
     flex-direction: column;
 }
+
+.react-pdf__Page {
+    margin-bottom: 20px;
+}
+
+.react-pdf__Page__annotations.annotationLayer {
+    display: none;
+}

@@ -68,6 +68,8 @@
 
 .TestPage span.question-test {
     font-size: 30px;
+    max-width: 80vw;
+    display: block;
 }
 
 .TestPage .answer label {
@@ -185,6 +187,8 @@
     margin: 20px;
     background: #efefef;
     border-radius: 20px;
+    max-height: 70vh;
+    overflow: auto;
 }
 
 .previous-tries-list .attempt {
@@ -268,4 +272,12 @@
 }
 
 .finish-modal button#next_step_button {
+}
+
+.errors .container.question a {
+    text-decoration: none;
+    color: #cfcfcf;
+    font-size: 20px;
+    display: block;
+    margin-top: 25px;
 }

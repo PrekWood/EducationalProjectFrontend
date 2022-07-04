@@ -92,7 +92,7 @@ export default function AdminChapter() {
                 hydrateChapter={hydrateChapter}
             />
 
-            <Help/>
+            <Help page={20}/>
         </div>
     </>
 }

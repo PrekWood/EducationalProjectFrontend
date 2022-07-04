@@ -166,6 +166,6 @@ export default function AdminNewSubChapter() {
             </div>
         </div>
 
-        <Help/>
+        <Help page={22}/>
     </>
 }

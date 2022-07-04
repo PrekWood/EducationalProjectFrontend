@@ -39,7 +39,7 @@ export default function Authentication() {
 
             </div>
 
-            <Help/>
+            <Help page={3}/>
         </>
     );
 }

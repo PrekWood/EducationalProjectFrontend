@@ -120,6 +120,7 @@ export default function AdminUpdateTestQuestion() {
         let type = null;
         let errorType = null;
         let answers = [];
+        let idSubChapter = null;
         for (let formFieldIndex = 0; formFieldIndex < formFields.length; formFieldIndex++) {
             if (formFields[formFieldIndex].id === "test_question_question") {
                 questionText = formFields[formFieldIndex].value
@@ -132,6 +133,9 @@ export default function AdminUpdateTestQuestion() {
             }
             if (formFields[formFieldIndex].id === "test_question_error") {
                 errorType = formFields[formFieldIndex].value
+            }
+            if (formFields[formFieldIndex].id === "test_question_subchapter") {
+                idSubChapter = formFields[formFieldIndex].value
             }
             if (formFields[formFieldIndex].name === "chapter-name-field") {
                 let answerToPush = new TestAnswer(
@@ -148,6 +152,7 @@ export default function AdminUpdateTestQuestion() {
         question.difficulty = difficulty;
         question.errorType = errorType;
         question.answers = answers;
+        question.idSubChapter = idSubChapter;
         question.update(
             ()=>{
                 window.location.href = `/admin/chapter/${question.chapter.id}`;
@@ -235,6 +240,22 @@ export default function AdminUpdateTestQuestion() {
         return errorTypeOptions;
     }
 
+    function getSubChapterOptions(){
+        let optionsList = [];
+        if(question == null){
+            return;
+        }
+        question.chapter.subChapterList.map((subChapter)=>{
+            optionsList.push({
+                "id": subChapter.id,
+                "name": subChapter.name,
+                "value": subChapter.id,
+                "selected":question.subChapter == null ? false : subChapter.id === question.subChapter.id
+            })
+        })
+        return optionsList
+    }
+
     return <>
         <div className={"AdminNewTestQuestion"}>
             <h1>
@@ -283,6 +304,11 @@ export default function AdminUpdateTestQuestion() {
                                         name="Τύπος Σφάλματος"
                                         options={getErrorTypeOptions()}
                                     />
+                                    <Select
+                                        id="test_question_subchapter"
+                                        name="Θεωρία"
+                                        options={getSubChapterOptions()}
+                                    />
                                 </>
                             )}
 
@@ -319,7 +345,6 @@ export default function AdminUpdateTestQuestion() {
             </div>
         </div>
 
-
-        <Help/>
+        <Help page={31}/>
     </>
 }

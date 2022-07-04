@@ -156,6 +156,6 @@ export default function PreviousTries() {
             </div>
         </div>
 
-        <Help/>
+        <Help page={11}/>
     </>
 }

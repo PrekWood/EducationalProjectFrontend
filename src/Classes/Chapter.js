@@ -14,6 +14,7 @@ export default class Chapter extends Model {
         this.testQuestions = [];
         this.bestAttempt = null;
         this.completionRate = null;
+        this.subChapterList = null;
     }
 
     static castToChapter(chapter) {
@@ -26,6 +27,7 @@ export default class Chapter extends Model {
         chapterObj.testQuestions = chapter.testQuestions;
         chapterObj.bestAttempt = chapter.bestAttempt;
         chapterObj.completionRate = chapter.completionRate;
+        chapterObj.subChapterList = chapter.subChapterList;
         return chapterObj;
     }
 

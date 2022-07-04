@@ -94,6 +94,6 @@ export default function SubChapterPage() {
             </div>
         </div>
 
-        <Help/>
+        <Help page={7}/>
     </>
 }

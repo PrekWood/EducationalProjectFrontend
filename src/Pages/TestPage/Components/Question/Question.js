@@ -9,6 +9,12 @@ import Validate from "../../../../Classes/Validate";
 export default function Question(props) {
 
     const [isSelected, setSelected] = useState(false);
+    function getLink(){
+        if(props.question.subChapter == null){
+            return `/chapter/${props.question.chapter.id}`;
+        }
+        return `/subchapter/${props.question.subChapter.id}`;
+    }
 
     function setFirstValue() {
         if (!isSelected) {
@@ -41,5 +47,8 @@ export default function Question(props) {
                 <RedFlagSvg/>
             }
         </div>
+        {Validate.isEmpty(props.wrongAnswer) ? "" : (
+            <a href={getLink()} target={"_blank"}>Δείτε ξανα την θεωρία ></a>
+        )}
     </div>
 }

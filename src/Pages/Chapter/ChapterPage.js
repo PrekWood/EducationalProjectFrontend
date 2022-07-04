@@ -100,6 +100,6 @@ export default function ChapterPage() {
             </div>
         </div>
 
-        <Help/>
+        <Help page={7}/>
     </>
 }

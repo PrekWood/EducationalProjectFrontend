@@ -100,7 +100,7 @@ export default function AdminUpdateSubChapter() {
             <h1>
                 <a href={"/admin"}>Αρχική</a>
                 <span className={"separator"}>/</span>
-                <a href={`/admin/chapter/${subChapter.id}/`}>{subChapter.name}</a>
+                {/*<a href={`/admin/chapter/${subChapter.chapter.id}/`}>{subChapter.chapter.name}</a>*/}
                 <span className={"separator"}>/</span>
                 Επεξεργασία υποκεφάλαιου
             </h1>
@@ -151,6 +151,6 @@ export default function AdminUpdateSubChapter() {
             </div>
         </div>
 
-        <Help/>
+        <Help page={24}/>
     </>
 }
